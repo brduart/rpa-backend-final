@@ -36,12 +36,15 @@ public class SeleniumController {
         if (processName.equals("RPALOGIN")) {
             return new ResponseEntity<>(seleniumService.performLogin(), HttpStatus.OK);
         } else if (processName.equals("RPABUTTON")) {
-            return new ResponseEntity<>(seleniumService.performLogin(), HttpStatus.OK);
-        } else if (processName.equals("RPAREGISTER")) {
-            return new ResponseEntity<>(seleniumService.performLogin(), HttpStatus.OK);
+            return new ResponseEntity<>(seleniumService.performButton(), HttpStatus.OK);
+        } else if (processName.equals("RPAVERIFYTITLE")) {
+            return new ResponseEntity<>(seleniumService.performVerifyTitle(), HttpStatus.OK);
         } else if (processName.equals("RPAINPUT")) {
-            return new ResponseEntity<>(seleniumService.performLogin(), HttpStatus.OK);
+            return new ResponseEntity<>(seleniumService.performInput(), HttpStatus.OK);
+        } else if (processName.equals("RPALOGOUT")) {
+            return new ResponseEntity<>(seleniumService.performLogout(), HttpStatus.OK);
         }
+
         return null;
     }
 }
